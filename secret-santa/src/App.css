@@ -21,7 +21,8 @@
 .App-link {
   color: #61dafb;
 }
-/* body {
-  background-image: url
-} */
+body {
+  background: url("./images/purple-tree.jpg") no-repeat center center fixed;
+  background-size: cover;
+}
 

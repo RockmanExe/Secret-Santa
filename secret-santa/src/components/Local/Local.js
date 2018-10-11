@@ -15,6 +15,8 @@ class Local extends Component {
                 <Form>
                     <Input
                         placeholder='Member name'
+                        name = 'name'
+                        // value = {this.s}
                     />
                     <br/>
                     <Input
