@@ -1,28 +1,21 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
+import { Route } from 'react-router-dom';
 import './App.css';
+// import RegistrationPage from './components/RegistrationPage';
+// import Login from './components/Login';
+import Local from './components/Local/Local';
+import Home from './components/Home';
 
 class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    );
-  }
+    render() {
+        return (
+            <div className="App">
+                <Route path='/api/local' component={Local} />
+                <Route exact path='/' component={Home} />
+            </div>
+        );
+    }
 }
 
 export default App;
