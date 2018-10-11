@@ -1,0 +1,21 @@
+
+Form {
+  margin: 10% auto;
+  width: 60%;
+}
+
+.local-page .member {
+  background-color: green;
+  width:200px;
+  border:2px solid red;
+  margin-right: 20px;
+}
+
+.local-page .pull-names{
+  background-color: red;
+  border:2px solid green;
+}
+Input {
+  display: block;
+  overflow: scroll;
+}

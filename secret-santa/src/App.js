@@ -1,17 +1,19 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import { Route } from 'react-router-dom';
 import './App.css';
 // import RegistrationPage from './components/RegistrationPage';
 // import Login from './components/Login';
 import Local from './components/Local/Local';
+import PullNames from './components/Local/PullNames';
 import Home from './components/Home';
 
 class App extends Component {
     render() {
         return (
             <div className="App">
-                <Route path='/api/local' component={Local} />
+                <Route exact path='/api/local' component={Local} />
+                <Route path='/api/local/pullingnames' component={PullNames} />
                 <Route exact path='/' component={Home} />
             </div>
         );
