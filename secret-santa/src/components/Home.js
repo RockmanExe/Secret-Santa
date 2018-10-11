@@ -13,7 +13,7 @@ class Home extends Component {
             <div>
                 Home
                 <Link to='/api/local'><Button className='localButton'>Local</Button></Link>
-                <Link to='/api/local'><Button className='localButton'></Button></Link>
+                <Link to='/api/local'><Button className='localButton'>Online</Button></Link>
             </div>
         );
     }
