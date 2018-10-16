@@ -1,0 +1,27 @@
+.home-page {
+    border:2px solid white;
+    margin-top: 50px;
+}
+
+.home-page span{
+    color: white;
+}
+
+.home-page .local-button{
+    border: 1px solid yellow;
+    margin-bottom: 30px;
+    width:300px;
+
+}
+
+.home-page .online-button{
+    border: 1px solid green;
+    width: 300px;
+}
+
+.home-page .buttons{
+    display: flex;
+    flex-direction: column;
+    border:2px solid orange;
+    margin-top:100px;
+}

@@ -6,8 +6,18 @@ import { Form, Input, Button } from 'reactstrap';
 class Local extends Component {
     constructor(props) {
         super(props);
-        this.state = {}
+        this.state = {
+            name: '',
+            wishes: [],
+            wish: ''
+        }
+
     }
+
+    handleChange = e => {
+        this.setState({ [e.target.name]: e.target.value })
+    }
+
     render() {
         return (
             <div className='local-page'>
@@ -16,11 +26,16 @@ class Local extends Component {
                     <Input
                         placeholder='Member name'
                         name = 'name'
-                        // value = {this.s}
+                        value = {this.state.name}
+                        onChange={this.handleChange}
+
                     />
                     <br/>
                     <Input
                         placeholder='Wishlist'
+                        name = 'wish'
+                        value = {this.state.wish}
+                        onChange={this.handleChange}
                     />
                 </Form>
                 

@@ -10,10 +10,12 @@ class Home extends Component {
     }
     render() {
         return (
-            <div>
-                Home
-                <Link to='/api/local'><Button className='localButton'>Local</Button></Link>
-                <Link to='/api/local'><Button className='localButton'>Online</Button></Link>
+            <div className= "home-page">
+                <span>Merry Christmas!</span>
+                <div className="buttons">
+                    <Link to='/api/local'><Button className='local-button'>Local</Button></Link>
+                    <Link to='/api/local'><Button className='online-button'>Online</Button></Link>
+                </div>
             </div>
         );
     }
