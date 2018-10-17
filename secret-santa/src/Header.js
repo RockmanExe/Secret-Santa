@@ -9,8 +9,8 @@ class Home extends Component {
     }
     render() {
         return (
-            <div>
-              <h1 className='headerText'>Secret Santa</h1>
+            <div className='navBar'>
+                <h1 className='headerText'>Secret Santa</h1>
             </div>
         );
     }

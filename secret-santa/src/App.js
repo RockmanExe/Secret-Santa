@@ -8,11 +8,13 @@ import Local from './components/Local/Local';
 import './App.css';
 import PullNames from './components/Local/PullNames';
 import Home from './components/Home';
+import Header from './Header';
 
 class App extends Component {
     render() {
         return (
             <div className="App">
+                <Header />
                 <Route exact path='/local' component={Local} />
                 <Route path='/local/pullingnames' component={PullNames} />
                 <Route exact path='/' component={Home} />
