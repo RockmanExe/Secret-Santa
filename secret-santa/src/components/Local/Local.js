@@ -2,16 +2,22 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import './index.css';
 import { Form, Input, Button } from 'reactstrap';
+import { connect } from 'react-redux';
+import { gettingUsers, addingUser } from '../../actions';
+
 
 class Local extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            name: '',
+            member: '',
             wishes: [],
             wish: ''
         }
 
+    }
+    componentDidMount() {
+        this.props.gettingUsers();
     }
 
     handleChange = e => {
@@ -20,25 +26,29 @@ class Local extends Component {
 
     handleSubmit = e => {
         e.preventDefault();
-        const userInfo = { name: this.state.name }
+        const userInfo = {
+            member: this.state.member,
+            wish: this.state.wish
+        }
         console.log(userInfo);
+        this.props.addingUser(userInfo);
+
         // axios
         //     .post('smth/api/user', { name: this.state.name, wishes: this.state.wishes})
 
     }
 
     render() {
+        // console.log('props render in local: ', this.props )
         return (
             <div className='local-page'>
 
                 <Form>
                     <Input
                         placeholder='Member name'
-                        name='name'
+                        name='member'
                         value={this.state.name}
                         onChange={this.handleChange}
-
-
                     />
                     <br />
                     <Input
@@ -57,4 +67,11 @@ class Local extends Component {
     }
 }
 
-export default Local;
+const mapStateToProps = ({ members }) => {
+    // console.log('state in map: ', members);
+    return {
+        members
+    }
+}
+
+export default connect(mapStateToProps, { gettingUsers, addingUser })(Local);
