@@ -5,6 +5,7 @@ import './App.css';
 // import RegistrationPage from './components/RegistrationPage';
 // import Login from './components/Login';
 import Local from './components/Local/Local';
+import './App.css';
 import PullNames from './components/Local/PullNames';
 import Home from './components/Home';
 
