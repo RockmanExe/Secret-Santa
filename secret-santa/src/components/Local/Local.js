@@ -4,6 +4,7 @@ import './index.css';
 import { Form, Input, Button } from 'reactstrap';
 import { connect } from 'react-redux';
 import { gettingUsers, addingUser } from '../../actions';
+import MappedList from './MappedList';
 
 
 class Local extends Component {
@@ -12,12 +13,14 @@ class Local extends Component {
         this.state = {
             member: '',
             wishes: [],
-            wish: ''
+            wish: '',
+            loading: true
         }
 
     }
-    componentDidMount() {
+    componentWillMount() {
         this.props.gettingUsers();
+        setTimeout(() => this.setState({ loading: false }), 100);
     }
 
     handleChange = e => {
@@ -38,36 +41,51 @@ class Local extends Component {
     }
 
     render() {
-        console.log('props render in local: ', this.props)
+        // console.log('props render in local: ', this.props)
+        const { loading } = this.state;
+        if (loading) {
+            return null;
+        }
         return (
-            <div className='local-page'>
+            <div className='localWrapper'>
+                <div className='local-pageNames'>
+                    <h3>Current Members</h3>
+                    <div className='namesWrapper'>
+                        {this.props.members.map(member => {
+                            return <MappedList key={member.id} member={member} />
+                        })}
 
-                <Form>
-                    <Input
-                        placeholder='Member name'
-                        name='member'
-                        value={this.state.member}
-                        onChange={this.handleChange}
-                    />
-                    <br />
-                    <Input
-                        placeholder='Wishlist'
-                        name='wish'
-                        value={this.state.wish}
-                        onChange={this.handleChange}
-                    />
-                    <Button className='addWish' onClick={this.handleAdd}>+ Add</Button>
-                </Form>
+                    </div>
+                </div>
+                <div className='local-page'>
 
-                <Button className='member' onClick={this.handleSubmit}>Submit Member</Button>
-                <Link to='/local/pullingnames'><Button className='pull-names'>Start Pulling Names</Button></Link>
+                    <Form>
+                        <Input
+                            placeholder='Member name'
+                            name='member'
+                            value={this.state.member}
+                            onChange={this.handleChange}
+                        />
+                        <br />
+                        <Input
+                            placeholder='Wishlist'
+                            name='wish'
+                            value={this.state.wish}
+                            onChange={this.handleChange}
+                        />
+                        <Button className='addWish' onClick={this.handleAdd}>+ Add</Button>
+                    </Form>
+
+                    <Button className='member' onClick={this.handleSubmit}>Submit Member</Button>
+                    <Link to='/local/pullingnames'><Button className='pull-names'>Start Pulling Names</Button></Link>
+                </div>
             </div>
         );
     }
 }
 
 const mapStateToProps = ({ members }) => {
-    console.log('state in map: ', members);
+    // console.log('state in map: ', members);
     return {
         members
     }

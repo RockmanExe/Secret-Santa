@@ -10,8 +10,30 @@ Form {
     padding: 5% 0%;
     border: 1px solid rgb(97, 81, 162);
     border-radius: 3px;
-    background-image: linear-gradient(#4A5D98 , #9453B4);
+    /* background-image: linear-gradient(#A1070A , #320100); */
+    background-image: linear-gradient(#DE0001 , #320100);
+    /* background-image: linear-gradient(#4A5D98 , #9453B4); */
     box-shadow:0 0 20px rgba(60, 49, 96, 0.749);
+}
+.local-pageNames {
+    width: 30%;
+    margin: 5% auto;
+    padding: 5% 0%;
+    border: 1px solid rgb(97, 81, 162);
+    border-radius: 3px;
+    /* background-image: linear-gradient(#4A5D98 , #9453B4); */
+    /* background-image: linear-gradient(#9BA54C, #0A1800); */
+    background-image: linear-gradient(#DE0001 , #320100);
+
+    box-shadow:0 0 20px rgba(60, 49, 96, 0.749);
+}
+.local-pageNames h3 {
+    color: white; 
+    font: bold  Helvetica, Arial, Sans-Serif;
+    text-shadow: 1px 1px #09721b, 
+                 2px 2px #0c7d24, 
+                 3px 3px #0c8038;
+
 }
 .local-page .member {
   background-color: green;
@@ -27,4 +49,13 @@ Form {
 Input {
   display: block;
   overflow: scroll;
+}
+
+.localWrapper {
+    display: flex;
+    flex-direction: row;
+}
+.singleMember h5 {
+   color: white;
+   /* text-shadow: 1px 1px 1px rgb(252, 255, 252); */
 }
