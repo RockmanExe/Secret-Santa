@@ -22,7 +22,8 @@
   color: #61dafb;
 }
 body {
-  background: url("./images/purple-tree.jpg") no-repeat center center fixed;
+  /* background: url("./images/purple-tree.jpg") no-repeat center center fixed; */
+  background-image: linear-gradient(to right, #A1B4EE , #BCAAE8);
   background-size: cover;
 }
 

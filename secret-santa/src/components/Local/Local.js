@@ -22,34 +22,34 @@ class Local extends Component {
         e.preventDefault();
         const userInfo = { name: this.state.name }
         console.log(userInfo);
-        axios
-            .post('smth/api/user', { name: this.state.name, wishes: this.state.wishes})
-        
-    } 
+        // axios
+        //     .post('smth/api/user', { name: this.state.name, wishes: this.state.wishes})
+
+    }
 
     render() {
         return (
             <div className='local-page'>
-                
+
                 <Form>
                     <Input
                         placeholder='Member name'
-                        name = 'name'
-                        value = {this.state.name}
+                        name='name'
+                        value={this.state.name}
                         onChange={this.handleChange}
 
 
                     />
-                    <br/>
+                    <br />
                     <Input
                         placeholder='Wishlist'
-                        name = 'wish'
-                        value = {this.state.wish}
+                        name='wish'
+                        value={this.state.wish}
                         onChange={this.handleChange}
                     />
                     <Button className='addWish' onClick={this.handleAdd}>+ Add</Button>
                 </Form>
-                
+
                 <Button className='member' onClick={this.handleSubmit}>Submit Member</Button>
                 <Link to='/api/local/pullingnames'><Button className='pull-names'>Start Pulling Names</Button></Link>
             </div>
