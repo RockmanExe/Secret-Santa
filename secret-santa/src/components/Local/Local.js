@@ -27,19 +27,16 @@ class Local extends Component {
     handleSubmit = e => {
         e.preventDefault();
         const userInfo = {
-            member: this.state.member,
-            wish: this.state.wish
+            members: this.state.member,
+            wishlist: this.state.wish
         }
-        console.log(userInfo);
+        console.log('user info: ',userInfo);
         this.props.addingUser(userInfo);
-
-        // axios
-        //     .post('smth/api/user', { name: this.state.name, wishes: this.state.wishes})
-
+        window.location.reload();
     }
 
     render() {
-        // console.log('props render in local: ', this.props )
+        console.log('props render in local: ', this.props )
         return (
             <div className='local-page'>
 
@@ -68,7 +65,7 @@ class Local extends Component {
 }
 
 const mapStateToProps = ({ members }) => {
-    // console.log('state in map: ', members);
+    console.log('state in map: ', members);
     return {
         members
     }
