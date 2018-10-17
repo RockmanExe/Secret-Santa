@@ -8,12 +8,11 @@ export const DELETED = 'DELETED';
 export const UPDATED = 'UPDATED';
 
 export const gettingUsers = () => {
-    const getUsers = axios.get('http://localhost:7000/members/');
-    console.log('Request: ', getUsers);
+    const promise = axios.get('http://localhost:7000/members');
+    console.log('Request: ', promise);
     return dispatch => {
         dispatch({ type: FETCHING_USERS });
-        getUsers.then(response => {
-            // console.log('response data: ', response.data)
+        promise.then(response => {
             dispatch({ type: FETCHED_USERS, payload: response.data })
         })
             .catch(err => {
@@ -23,23 +22,13 @@ export const gettingUsers = () => {
 }
 
 export const addingUser = (newUser) => {
-    console.log('new User object in adding User: ', newUser);
-    const promise = axios.post('http://localhost:7000/members/', newUser);
+    const promise = axios.post('http://localhost:7000/members', newUser);
     return dispatch => {
         dispatch({ type: FETCHING_USERS });
-        promise.then(response => {
-            // console.log('response data in adding: ', response.data)
-              dispatch({ type: ADD_USER, payload: response.data })
-            const getUsers = axios.get('http://localhost:7000/members');
-            dispatch({ type: FETCHING_USERS });
-            getUsers.then(response => {
-                console.log('response data in actions addingUser: ', response.data)
-                dispatch({ type: FETCHED_USERS, payload: response.data })
+        promise
+            .then(response => {
+                dispatch({ type: ADD_USER, payload: response.data })
             })
-                .catch(err => {
-                    dispatch({ type: ERROR, payload: err })
-                })
-        })
             .catch(err => {
                 dispatch({ type: ERROR, payload: err })
             })
@@ -47,23 +36,11 @@ export const addingUser = (newUser) => {
 }
 
 export const deletingUser = (_id) => {
-    const promise = axios.delete(`http://localhost:7000/users/${_id}`);
+    const promise = axios.delete(`http://localhost:7000/members/${_id}`);
     return dispatch => {
         dispatch({ type: FETCHING_USERS });
         promise.then(response => {
-            // console.log('response data in deleting user: ', response.data)
-            //   fetch({ type: DELETED, payload: response.data })
-            const getUsers = axios.get('http://localhost:7000/users');
-
-            dispatch({ type: FETCHING_USERS });
-            getUsers.then(response => {
-                // console.log('response data in delete: ', response.data)
-                dispatch({ type: FETCHED_USERS, payload: response.data })
-            })
-                .catch(err => {
-                    dispatch({ type: ERROR, payload: err })
-                })
-
+            dispatch({ type: DELETED });
         })
             .catch(err => {
                 dispatch({ type: ERROR, payload: err })
@@ -73,7 +50,7 @@ export const deletingUser = (_id) => {
 
 // export const editingUser = (updatedUser) => {
 //     // console.log('udated user info: ', updatedUser)
-//     const promise = axios.put(`http://localhost:8000/users/${updatedUser.id}`, updatedUser);
+//     const promise = axios.put(`http://localhost:7000/members/${updatedUser.id}`, updatedUser);
 //     return dispatch => {
 //         dispatch({ type: FETCHING_USERS });
 //         promise.then(response => {
