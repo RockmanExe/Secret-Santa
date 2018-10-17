@@ -13,8 +13,8 @@ class Home extends Component {
             <div className= "home-page">
                 <span>Merry Christmas!</span>
                 <div className="buttons">
-                    <Link to='/api/local'><Button className='local-button'>Local</Button></Link>
-                    <Link to='/api/local'><Button className='online-button'>Online</Button></Link>
+                    <Link to='/local'><Button className='local-button'>Local</Button></Link>
+                    <Link to='/local'><Button className='online-button'>Online</Button></Link>
                 </div>
             </div>
         );

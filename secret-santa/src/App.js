@@ -12,8 +12,8 @@ class App extends Component {
     render() {
         return (
             <div className="App">
-                <Route exact path='/api/local' component={Local} />
-                <Route path='/api/local/pullingnames' component={PullNames} />
+                <Route exact path='/local' component={Local} />
+                <Route path='/local/pullingnames' component={PullNames} />
                 <Route exact path='/' component={Home} />
             </div>
         );

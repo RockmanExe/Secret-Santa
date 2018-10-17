@@ -51,7 +51,7 @@ class Local extends Component {
                 </Form>
 
                 <Button className='member' onClick={this.handleSubmit}>Submit Member</Button>
-                <Link to='/api/local/pullingnames'><Button className='pull-names'>Start Pulling Names</Button></Link>
+                <Link to='/local/pullingnames'><Button className='pull-names'>Start Pulling Names</Button></Link>
             </div>
         );
     }
