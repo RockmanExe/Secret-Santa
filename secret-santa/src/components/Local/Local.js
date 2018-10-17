@@ -30,13 +30,15 @@ class Local extends Component {
             members: this.state.member,
             wishlist: this.state.wish
         }
-        console.log('user info: ',userInfo);
+        console.log('user info: ', userInfo);
         this.props.addingUser(userInfo);
-        window.location.reload();
+        // window.location.reload();
+        this.setState({ member: '', wish: '' })
+        // this.props.history.push('/local')
     }
 
     render() {
-        console.log('props render in local: ', this.props )
+        console.log('props render in local: ', this.props)
         return (
             <div className='local-page'>
 
@@ -44,7 +46,7 @@ class Local extends Component {
                     <Input
                         placeholder='Member name'
                         name='member'
-                        value={this.state.name}
+                        value={this.state.member}
                         onChange={this.handleChange}
                     />
                     <br />
