@@ -35,8 +35,8 @@ export const addingUser = (newUser) => {
     }
 }
 
-export const deletingUser = (_id) => {
-    const promise = axios.delete(`http://localhost:7000/members/${_id}`);
+export const deletingUser = (id) => {
+    const promise = axios.delete(`http://localhost:7000/members/${id}`);
     return dispatch => {
         dispatch({ type: FETCHING_USERS });
         promise.then(response => {

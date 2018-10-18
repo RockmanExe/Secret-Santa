@@ -12,6 +12,7 @@ class MappedList extends Component {
 
     handleDelete = () => {
         const id = this.props.member.id;
+        console.log('id: ')
         this.props.deletingUser(id);
     }
 
@@ -21,8 +22,8 @@ class MappedList extends Component {
         console.log('this props: ', this.props);
         return (
 
-            <div className='singleMember'>
-                <Link to={`members/get/${this.props.member.id}`} >
+            <div className='singleMember' className='linksMember'>
+                <Link to={`members/${this.props.member.id}`} >
                     <h5 className='headings memberName'>{this.props.member.members}</h5>
 
                     {/* <p className='wishlist'>{this.props.member.wishlist}</p> */}

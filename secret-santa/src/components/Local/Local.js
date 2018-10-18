@@ -59,7 +59,7 @@ class Local extends Component {
                     <h3>Current Members</h3>
                     <div className='namesWrapper'>
                         {this.props.members.map((member, i) => {
-                            return (<div key={i} className='linksMember'>
+                            return (<div key={i} >
                                 <MappedList key={member.id} member={member} />
                                 {/* <span className='x' onClick={this.handleDelete}>X</span> */}
                             </div>)
@@ -94,7 +94,7 @@ class Local extends Component {
 }
 
 const mapStateToProps = ({ members }) => {
-    // console.log('state in map: ', members);
+    console.log('state in map: ', members);
     return {
         members
     }
