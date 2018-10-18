@@ -9,7 +9,7 @@ const initialState =
 }
 
 export const UserReducer = (state = initialState, action) => {
-    console.log('action received: ', action)
+    // console.log('action received: ', action)
     switch (action.type) {
         case FETCHING_USERS:
             return Object.assign({}, state, { loading: true })
@@ -19,6 +19,7 @@ export const UserReducer = (state = initialState, action) => {
         case ERROR:
             return Object.assign({}, state, { error: action.payload, success: false, loading: false })
         case ADD_USER:
+            console.log(' action payload in add_user: ', action.payload)
             return Object.assign({}, state, { loading: false, success: true, members: action.payload });
         case DELETED:
             return Object.assign({}, state, { loading: false, success: true, members: action.payload })
