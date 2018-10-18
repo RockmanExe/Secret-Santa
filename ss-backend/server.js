@@ -43,6 +43,34 @@ server.post('/members', (req, res) => {
         });
 });
 
+server.put('/members/:id', (req, res)=>{
+    const changes=req.body;
+    const {id}=req.params;
+    db('members')
+    .where('id','=', id)
+    .update(changes)
+    .then(count=>{
+        res.status(200).json(count);
+    })
+    .catch(error=>{
+        res.status(500).json(error);
+    });
+});
+
+server.delete('/members/:id', (req, res) => {
+    const {id} = req.params;
+    db('members')
+    .where({id})
+    .del()
+    .then(count => {
+        res.status(200).json(count);
+    })
+    .catch (error => {
+        res.status(500).json(error);
+    });
+});
+
+
 ///////////////////////////////////////
 
 const port = 7000;
