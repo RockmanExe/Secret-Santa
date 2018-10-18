@@ -40,11 +40,12 @@ class Local extends Component {
         // this.props.history.push('/local')
     }
 
-    handleDelete = () => {
-        const id = this.props.match.params.id;
-        console.log('id: ', id)
+    // handleDelete = () => {
+    //     const id = this.props.member.id;
+    //     console.log('this props: ', this.props);
+    //     console.log('id: ', id)
 
-    }
+    // }
 
     render() {
         // console.log('props render in local: ', this.props)
@@ -60,7 +61,7 @@ class Local extends Component {
                         {this.props.members.map((member, i) => {
                             return (<div key={i} className='linksMember'>
                                 <MappedList key={member.id} member={member} />
-                                <span className='x' onClick={this.handleDelete}>X</span>
+                                {/* <span className='x' onClick={this.handleDelete}>X</span> */}
                             </div>)
                         })}
 
