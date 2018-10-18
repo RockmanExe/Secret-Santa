@@ -59,3 +59,13 @@ Input {
    color: white;
    /* text-shadow: 1px 1px 1px rgb(252, 255, 252); */
 }
+
+.linksMember {
+    display: flex;
+    flex-direction: row;
+    margin: 0 20%;
+    justify-content: space-between;
+}
+.x {
+    margin-left: 3rem;
+}
