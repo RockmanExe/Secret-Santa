@@ -35,17 +35,9 @@ class Local extends Component {
         }
         console.log('user info: ', userInfo);
         this.props.addingUser(userInfo);
-        // window.location.reload();
         this.setState({ member: '', wish: '' })
-        // this.props.history.push('/local')
+        // window.location.reload();
     }
-
-    // handleDelete = () => {
-    //     const id = this.props.member.id;
-    //     console.log('this props: ', this.props);
-    //     console.log('id: ', id)
-
-    // }
 
     render() {
         // console.log('props render in local: ', this.props)
