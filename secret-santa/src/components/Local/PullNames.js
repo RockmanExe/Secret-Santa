@@ -11,7 +11,7 @@ class PullNames extends Component {
     render() {
         return (
             <div className='pull-names'>
-                
+
                 <Form>
                     <Input
                         placeholder='Your name'
