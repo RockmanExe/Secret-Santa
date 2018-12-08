@@ -36,7 +36,7 @@ class Local extends Component {
         console.log('user info: ', userInfo);
         this.props.addingUser(userInfo);
         this.setState({ member: '', wish: '' })
-        // window.location.reload();
+        window.location.reload();
     }
 
     render() {

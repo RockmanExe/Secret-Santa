@@ -14,6 +14,7 @@ class MappedList extends Component {
         const id = this.props.member.id;
         console.log('id: ')
         this.props.deletingUser(id);
+        window.location.reload()
     }
 
 
